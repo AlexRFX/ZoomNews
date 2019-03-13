@@ -22,14 +22,24 @@
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#">Contato</a>
                     </li>
-                    <li class="nav-item dropdown ml-md-auto">
-                        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Dropdown link</a>
+                    <?php if (loggedin()):?>
+                        <li class="nav-item dropdown ml-md-auto">
+                        <a class="nav-link dropdown-toggle" href="loginout.php">Loginout</a> 
+                        <div class="dropdown-menu dropdown-menu-right"</div></li>
+                    <?php else: ?>
+                        <li class="nav-item dropdown ml-md-auto">
+                        <a class="nav-link dropdown-toggle" href="Login" id="navbarDropdownMenuLink" data-toggle="dropdown">Login</a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a> <a class="dropdown-item" href="#">Another action</a> <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider">
-                            </div> <a class="dropdown-item" href="#">Separated link</a>
+                        <form action="login.php" method="post">
+                            <b>Login:</b></br> 
+                            <a class="dropdown-item" <label for="email"><b>E-Mail:</b></label><input type="text" placeholder="Digite o seu E-Mail" name="email" id="email" required></a> 
+                            <a class="dropdown-item" <label for="password"><b>Senha:</b></label><input type="password" placeholder="Digite a sua Senha" name="password" id="password" required></a>
+                            <div class="dropdown-divider"></div> 
+                            <a class="dropdown-item"><button type="submit">Entrar</button></a>
+                        </form>
                         </div>
-                    </li>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>

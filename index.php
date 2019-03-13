@@ -1,3 +1,8 @@
+<?php
+session_start();
+// inclui das functions:
+require 'functions.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
